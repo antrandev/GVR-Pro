@@ -20,6 +20,7 @@ namespace Presentation.WebApplication.Controllers
 
         public IActionResult Index()
         {
+            ViewBag.Language = Request.Cookies["Lang_Web"];
             return View();
         }
 

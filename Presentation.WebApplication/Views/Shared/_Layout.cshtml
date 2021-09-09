@@ -21,7 +21,7 @@
 </head>
 
 <body data-topbar="dark" data-layout="horizontal" data-layout-scrollable="true">
-
+    <partial name="~/Views/Shared/Main/_Preloader.cshtml" />
     <!-- Begin page -->
     <div id="layout-wrapper">
 
@@ -69,56 +69,56 @@
                     <partial name="~/Views/Shared/Main/_Language.cshtml" />
 
                     @*<div class="dropdown d-none d-lg-inline-block ml-1">
-                        <button type="button" class="btn header-item noti-icon waves-effect"
-                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="bx bx-customize"></i>
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end">
-                            <div class="px-lg-2">
-                                <div class="row g-0">
-                                    <div class="col">
-                                        <a class="dropdown-icon-item" href="#">
-                                            <img src="~/assets/images/brands/github.png" alt="Github">
-                                            <span>GitHub</span>
-                                        </a>
+                            <button type="button" class="btn header-item noti-icon waves-effect"
+                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="bx bx-customize"></i>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end">
+                                <div class="px-lg-2">
+                                    <div class="row g-0">
+                                        <div class="col">
+                                            <a class="dropdown-icon-item" href="#">
+                                                <img src="~/assets/images/brands/github.png" alt="Github">
+                                                <span>GitHub</span>
+                                            </a>
+                                        </div>
+                                        <div class="col">
+                                            <a class="dropdown-icon-item" href="#">
+                                                <img src="~/assets/images/brands/bitbucket.png" alt="bitbucket">
+                                                <span>Bitbucket</span>
+                                            </a>
+                                        </div>
+                                        <div class="col">
+                                            <a class="dropdown-icon-item" href="#">
+                                                <img src="~/assets/images/brands/dribbble.png" alt="dribbble">
+                                                <span>Dribbble</span>
+                                            </a>
+                                        </div>
                                     </div>
-                                    <div class="col">
-                                        <a class="dropdown-icon-item" href="#">
-                                            <img src="~/assets/images/brands/bitbucket.png" alt="bitbucket">
-                                            <span>Bitbucket</span>
-                                        </a>
-                                    </div>
-                                    <div class="col">
-                                        <a class="dropdown-icon-item" href="#">
-                                            <img src="~/assets/images/brands/dribbble.png" alt="dribbble">
-                                            <span>Dribbble</span>
-                                        </a>
-                                    </div>
-                                </div>
 
-                                <div class="row no-gutters">
-                                    <div class="col">
-                                        <a class="dropdown-icon-item" href="#">
-                                            <img src="~/assets/images/brands/dropbox.png" alt="dropbox">
-                                            <span>Dropbox</span>
-                                        </a>
-                                    </div>
-                                    <div class="col">
-                                        <a class="dropdown-icon-item" href="#">
-                                            <img src="~/assets/images/brands/mail_chimp.png" alt="mail_chimp">
-                                            <span>Mail Chimp</span>
-                                        </a>
-                                    </div>
-                                    <div class="col">
-                                        <a class="dropdown-icon-item" href="#">
-                                            <img src="~/assets/images/brands/slack.png" alt="slack">
-                                            <span>Slack</span>
-                                        </a>
+                                    <div class="row no-gutters">
+                                        <div class="col">
+                                            <a class="dropdown-icon-item" href="#">
+                                                <img src="~/assets/images/brands/dropbox.png" alt="dropbox">
+                                                <span>Dropbox</span>
+                                            </a>
+                                        </div>
+                                        <div class="col">
+                                            <a class="dropdown-icon-item" href="#">
+                                                <img src="~/assets/images/brands/mail_chimp.png" alt="mail_chimp">
+                                                <span>Mail Chimp</span>
+                                            </a>
+                                        </div>
+                                        <div class="col">
+                                            <a class="dropdown-icon-item" href="#">
+                                                <img src="~/assets/images/brands/slack.png" alt="slack">
+                                                <span>Slack</span>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>*@
+                        </div>*@
 
                     @*<div class="dropdown d-none d-lg-inline-block ml-1">
                             <button type="button" class="btn header-item noti-icon waves-effect" data-toggle="fullscreen">
@@ -151,11 +151,7 @@
         <div class="main-content">
 
             <div class="page-content">
-                <div class="container-fluid">
-
-                    @RenderBody()
-
-                </div> <!-- container-fluid -->
+                @RenderBody()
             </div>
             <!-- End Page-content -->
             <!-- Modal -->
@@ -321,10 +317,6 @@
     <script src="~/assets/libs/simplebar/simplebar.min.js"></script>
     <script src="~/assets/libs/node-waves/waves.min.js"></script>
 
-    <!-- apexcharts -->
-    <script src="~/assets/libs/apexcharts/apexcharts.min.js"></script>
-
-    <script src="~/assets/js/pages/dashboard.init.js"></script>
 
     <script src="~/assets/js/app.js"></script>
 </body>
