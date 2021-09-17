@@ -16,21 +16,11 @@ namespace Business.Services
             this.dataContext = dataContext;
         }
 
-        public List<string> GetOtherReousrce()
-        {
-            using(var context = new DataContext())
-            {
-                var unitofwork = new UnitOfWork(context);
-                var KeyName = unitofwork.Query<OtherReousrce>().Select(s=> s.KeyName).ToList();
-                return KeyName;
-            }
-        }
 
         public string SaveChangeOtherResource()
         {
             string[] listOtherResource = typeof(ResourceKeyPermission).GetEnumNames();
             List<string> listResourceName = new List<string>();
-            listResourceName = GetOtherReousrce();
             if (listOtherResource != null && listOtherResource.Count() > 0)
             {
                 listOtherResource = listOtherResource.Where(d => !string.IsNullOrWhiteSpace(d)
