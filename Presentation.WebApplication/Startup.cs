@@ -1,8 +1,11 @@
+using Data.BaseRepository;
+using Data.Entity;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc.Razor;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -57,6 +60,12 @@ namespace Presentation.WebApplication
 
                 options.SupportedUICultures = supportedCultures;
             });
+            #endregion
+            var conn = Configuration.GetConnectionString("DBNameContext");
+            services.AddDbContext<DataContext>(options => options.UseSqlServer(conn));
+            #region Add database 
+            services.AddScoped(typeof(IUnitOfWork), typeof(UnitOfWork));
+            services.AddOptions();
             #endregion
             services.AddControllersWithViews();
         }

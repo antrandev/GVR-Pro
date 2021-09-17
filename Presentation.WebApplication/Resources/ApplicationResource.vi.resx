@@ -117,16 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AreYouSure" xml:space="preserve">
+    <value>Bạn có chắc ?</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Hủy</value>
+  </data>
   <data name="EN" xml:space="preserve">
     <value>Tiếng anh</value>
   </data>
   <data name="Home" xml:space="preserve">
     <value>Trang chủ</value>
   </data>
+  <data name="Notify" xml:space="preserve">
+    <value>Thông báo</value>
+  </data>
   <data name="UserName" xml:space="preserve">
     <value>Người dùng</value>
   </data>
   <data name="VN" xml:space="preserve">
     <value>Tiếng việt</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Vâng</value>
   </data>
 </root>

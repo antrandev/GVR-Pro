@@ -22,6 +22,10 @@ namespace Presentation.WebApplication.Controllers
         {
             return RedirectToAction("Index", "Home");
         }
+        public RedirectToActionResult OtherResource()
+        {
+            return RedirectToAction("Index", "OtherResource");
+        }
 
         public RedirectToRouteResult DepartmentList()
         {
