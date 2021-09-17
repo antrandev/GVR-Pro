@@ -1,4 +1,6 @@
-﻿<!doctype html>
+﻿@using Presentation.WebApplication.Resources;
+@inject LocalizationService LocalizationService
+<!doctype html>
 <html lang="en">
 
 <head>
@@ -10,7 +12,9 @@
     <meta content="Themesbrand" name="author" />
     <!-- App favicon -->
     <link rel="shortcut icon" href="~/assets/images/favicon.ico">
-
+    <link rel="stylesheet" type="text/css" href="assets/libs/toastr/build/toastr.min.css">
+    <!-- Sweet Alert-->
+    <link href="assets/libs/sweetalert2/sweetalert2.min.css" rel="stylesheet" type="text/css" />
     <!-- Bootstrap Css -->
     <link href="~/assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
     <!-- Icons Css -->
@@ -317,8 +321,59 @@
     <script src="~/assets/libs/simplebar/simplebar.min.js"></script>
     <script src="~/assets/libs/node-waves/waves.min.js"></script>
 
+    <!-- toastr plugin -->
+    <script src="assets/libs/toastr/build/toastr.min.js"></script>
+    <!-- toastr init -->
+    <script src="assets/js/pages/toastr.init.js"></script>
+    <!-- Sweet Alerts js -->
+    <script src="assets/libs/sweetalert2/sweetalert2.min.js"></script>
+    <!-- Sweet alert init js-->
+    <script src="assets/js/pages/sweet-alerts.init.js"></script>
 
     <script src="~/assets/js/app.js"></script>
+
+    <script>
+        /*===============================================================================*/
+        /*===============================================================================*/
+        function ShowNoficationError(a) {
+            var e = "error";
+            toastr[e](a, "@LocalizationService.GetLocalizedHtmlString("Notify")");
+        }
+
+        function ShowNoficationSuccess(a) {
+            var e = "success";
+            toastr[e](a, "@LocalizationService.GetLocalizedHtmlString("Notify")");
+        }
+
+        function ShowNoficationWarning(a) {
+            var e = "warning";
+            toastr[e](a, "@LocalizationService.GetLocalizedHtmlString("Notify")");
+        }
+        /*===============================================================================*/
+        /*===============================================================================*/
+        function ShowNoficationYesOrCancel(text, btndelete, btncancel) {
+            Swal.fire({
+                title: "@LocalizationService.GetLocalizedHtmlString("AreYouSure")",
+                text: text,
+                icon: "success",
+                showCancelButton: !0,
+                confirmButtonText: "@LocalizationService.GetLocalizedHtmlString("Yes")",
+                cancelButtonText: "@LocalizationService.GetLocalizedHtmlString("Cancel")",
+                confirmButtonClass: "btn btn-success mt-2",
+                cancelButtonClass: "btn btn-danger ms-2 mt-2",
+                buttonsStyling: !1
+            }).then(function (status) {
+                if (status.value == true) {
+                    
+                }
+                else {
+                    
+                }
+            });
+        }
+        /*===============================================================================*/
+        /*===============================================================================*/
+    </script>
 </body>
 </html>
 

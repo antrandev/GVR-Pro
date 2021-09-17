@@ -7,17 +7,14 @@
 @inject LocalizationService LocalizationService
 <script>
     function SelectLang(langs) {
-        $.ajax({
-            url: 'Base/SetLanguage',
-            type: 'POST',
-            data: { langs: langs },
-            success: function (data) {
+        $.post('Base/SetLanguage',
+            { langs: langs },
+            function (data, status, jqXHR) {
                 location.reload();
-            },
-            error: function (data) {
-            }
-        });
+            })
     }
+
+
 </script>
 <div class="dropdown d-inline-block">
     <button type="button" class="btn header-item waves-effect"
