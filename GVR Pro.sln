@@ -5,7 +5,21 @@ VisualStudioVersion = 16.0.31624.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{AF3ADA33-55AF-4ABF-A3A8-57D4D676EB99}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentation.WebApplication", "Presentation.WebApplication\Presentation.WebApplication.csproj", "{2C4D1F54-70B1-4198-A97E-F60C88708AEF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Presentation.WebApplication", "Presentation.WebApplication\Presentation.WebApplication.csproj", "{2C4D1F54-70B1-4198-A97E-F60C88708AEF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{281D1B23-A9F2-4978-B552-7F5F91D6CC47}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure.Utilities", "Infrastructure.Utilities\Infrastructure.Utilities.csproj", "{142BB014-3807-49CE-9AD9-85C6C4CE2401}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business", "Business", "{7F31924D-802F-4C69-BF97-47122CC45D39}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{5F231D41-0204-45D7-BAA9-1A667A17E3F6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data.Entity", "Data.Entity\Data.Entity.csproj", "{31557264-1734-440D-9DF7-ABB6A3BEEEE5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Business.Services", "Business.Services\Business.Services.csproj", "{2E79B374-C47C-478C-A928-865CCA6C4D43}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data.BaseRepository", "Data.BaseRepository\Data.BaseRepository.csproj", "{C6235DD7-5341-4429-9BA4-14F28C76ED7B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,12 +31,32 @@ Global
 		{2C4D1F54-70B1-4198-A97E-F60C88708AEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2C4D1F54-70B1-4198-A97E-F60C88708AEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2C4D1F54-70B1-4198-A97E-F60C88708AEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{142BB014-3807-49CE-9AD9-85C6C4CE2401}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{142BB014-3807-49CE-9AD9-85C6C4CE2401}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{142BB014-3807-49CE-9AD9-85C6C4CE2401}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{142BB014-3807-49CE-9AD9-85C6C4CE2401}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31557264-1734-440D-9DF7-ABB6A3BEEEE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31557264-1734-440D-9DF7-ABB6A3BEEEE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31557264-1734-440D-9DF7-ABB6A3BEEEE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31557264-1734-440D-9DF7-ABB6A3BEEEE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E79B374-C47C-478C-A928-865CCA6C4D43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E79B374-C47C-478C-A928-865CCA6C4D43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E79B374-C47C-478C-A928-865CCA6C4D43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E79B374-C47C-478C-A928-865CCA6C4D43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6235DD7-5341-4429-9BA4-14F28C76ED7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6235DD7-5341-4429-9BA4-14F28C76ED7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6235DD7-5341-4429-9BA4-14F28C76ED7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6235DD7-5341-4429-9BA4-14F28C76ED7B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{2C4D1F54-70B1-4198-A97E-F60C88708AEF} = {AF3ADA33-55AF-4ABF-A3A8-57D4D676EB99}
+		{142BB014-3807-49CE-9AD9-85C6C4CE2401} = {281D1B23-A9F2-4978-B552-7F5F91D6CC47}
+		{31557264-1734-440D-9DF7-ABB6A3BEEEE5} = {5F231D41-0204-45D7-BAA9-1A667A17E3F6}
+		{2E79B374-C47C-478C-A928-865CCA6C4D43} = {7F31924D-802F-4C69-BF97-47122CC45D39}
+		{C6235DD7-5341-4429-9BA4-14F28C76ED7B} = {5F231D41-0204-45D7-BAA9-1A667A17E3F6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3D03E52B-254E-4704-9924-2B6F36218F18}

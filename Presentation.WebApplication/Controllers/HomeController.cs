@@ -1,4 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Business.Services;
+using Data.Entity;
+using Infrastructure.Utilities.Enum;
+using Infrastructure.Utilities.Resources;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Presentation.WebApplication.Models;
 using System;
@@ -12,14 +16,16 @@ namespace Presentation.WebApplication.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        DataContext dataContext;
+        public HomeController(ILogger<HomeController> logger,DataContext dataContext)
         {
+            this.dataContext = dataContext;
             _logger = logger;
         }
 
         public IActionResult Index()
         {
+            ViewBag.Language = Request.Cookies["Lang_Web"];
             return View();
         }
 
