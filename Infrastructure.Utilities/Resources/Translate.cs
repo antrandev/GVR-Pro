@@ -29,7 +29,7 @@ namespace Infrastructure.Utilities.Resources
 
         public TranslateItem(string key)
         {
-            var language = "en";
+            var language = "vi-VN";
             this.Value = SelectLaguage(key, language);
         }
 
