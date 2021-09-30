@@ -6,8 +6,15 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Utilities.Enum
 {
-    class EnumConstant
+    public class EnumConstant
     {
+        public const string Index_Home = "Index_Home";
+    }
+
+
+    public class SessionObjects
+    {
+        public const string Language = "Language";
     }
     public enum ResourceKeyPermission
     {

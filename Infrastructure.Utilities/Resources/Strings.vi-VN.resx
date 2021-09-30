@@ -117,4 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="EN" xml:space="preserve">
+    <value>Tiếng anh</value>
+  </data>
+  <data name="Index_Home" xml:space="preserve">
+    <value>Trang chủ</value>
+  </data>
+  <data name="VN" xml:space="preserve">
+    <value>Tiếng việt</value>
+  </data>
 </root>

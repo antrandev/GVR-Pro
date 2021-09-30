@@ -1,7 +1,9 @@
 ﻿using Business.Services;
 using Data.Entity;
+using Infrastructure.Settings;
 using Infrastructure.Utilities.Enum;
 using Infrastructure.Utilities.Resources;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Presentation.WebApplication.Models;
@@ -25,7 +27,7 @@ namespace Presentation.WebApplication.Controllers
 
         public IActionResult Index()
         {
-            ViewBag.Language = Request.Cookies["Lang_Web"];
+            AppSettingsProvider.CookieslanguageCode = HttpContext.Session.GetString("Lang_Web");
             return View();
         }
 

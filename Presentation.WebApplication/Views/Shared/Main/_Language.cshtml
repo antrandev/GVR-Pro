@@ -3,14 +3,15 @@
 *@
 @{
 }
-@using Presentation.WebApplication.Resources;
-@inject LocalizationService LocalizationService
+@using Infrastructure.Utilities.Resources;
 <script>
     function SelectLang(langs) {
         $.post('Base/SetLanguage',
-            { langs: langs },
+            { langs: langs, pathname: window.location.pathname},
             function (data, status, jqXHR) {
-                location.reload();
+                if (data == true) {
+                  window.location.reload();
+                }
             })
     }
 
@@ -31,11 +32,11 @@
     <div class="dropdown-menu dropdown-menu-end">
         <!-- item-->
         <a onclick="SelectLang('vi')" class="dropdown-item notify-item language">
-            <img src="~/assets/images/flags/vi.png" alt="user-image" class="me-1" height="12"> <span class="align-middle">@LocalizationService.GetLocalizedHtmlString("VN")</span>
+            <img src="~/assets/images/flags/vi.png" alt="user-image" class="me-1" height="12"> <span class="align-middle">VN</span>
         </a>
         <!-- item-->
         <a onclick="SelectLang('en')" class="dropdown-item notify-item language">
-            <img src="~/assets/images/flags/us.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">@LocalizationService.GetLocalizedHtmlString("EN")</span>
+            <img src="~/assets/images/flags/us.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">EN</span>
         </a>
     </div>
 </div>

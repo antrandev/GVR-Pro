@@ -1,7 +1,10 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Infrastructure.Settings;
+using Infrastructure.Utilities.Resources;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
+using Presentation.WebApplication.Sessions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,12 +14,12 @@ namespace Presentation.WebApplication.Controllers
 {
     public class BaseController : Controller
     {
-
         [HttpPost]
-        public IActionResult SetLanguage(string langs)
+        public IActionResult SetLanguage(string langs, string pathname)
         {
-            SetCookies(langs, null, null, true);
-            return LocalRedirect("/");
+            HttpContext.Session.SetString("Lang_Web", langs);
+            AppSettingsProvider.CookieslanguageCode = HttpContext.Session.GetString("Lang_Web");
+            return Json(true);
         }
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {

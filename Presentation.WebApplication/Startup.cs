@@ -1,5 +1,6 @@
 using Data.BaseRepository;
 using Data.Entity;
+using Infrastructure.Settings;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -22,9 +23,23 @@ namespace Presentation.WebApplication
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+
+        public Startup(IConfiguration configuration, Microsoft.AspNetCore.Hosting.IHostingEnvironment env)
         {
             Configuration = configuration;
+            var builder = new ConfigurationBuilder()
+            .SetBasePath(env.ContentRootPath)
+            .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+            .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
+            .AddEnvironmentVariables();
+            Configuration = builder.Build();
+            BuildAppSettingsProvider();
+        }
+
+        private void BuildAppSettingsProvider()
+        {
+            AppSettingsProvider.ConnectionString = Configuration.GetConnectionString("DBNameContext");
+            AppSettingsProvider.languageCode = Configuration["languageCode"];
         }
 
         public IConfiguration Configuration { get; }
@@ -45,7 +60,7 @@ namespace Presentation.WebApplication
                         return factory.Create("ApplicationResource", assemblyName.Name);
                     };
                 });
-
+            services.AddHttpContextAccessor();
             services.Configure<RequestLocalizationOptions>(options =>
             {
                 var supportedCultures = new[]
@@ -68,6 +83,15 @@ namespace Presentation.WebApplication
             services.AddOptions();
             #endregion
             services.AddControllersWithViews();
+
+            services.AddDistributedMemoryCache();
+
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromSeconds(10);
+                options.Cookie.HttpOnly = true;
+                options.Cookie.IsEssential = true;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -94,7 +118,7 @@ namespace Presentation.WebApplication
             var requestlocalizationOptions = app.ApplicationServices.GetService<IOptions<RequestLocalizationOptions>>();
             app.UseRequestLocalization(requestlocalizationOptions.Value);
             #endregion
-
+            app.UseSession();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
